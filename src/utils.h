@@ -40,9 +40,10 @@ namespace utils {
         T average = utils::mean(arr, axis);
         double var = 0;
         for (auto row = 0; row < nrow; ++row) {
-            double diff = arr[row][axis] - average;
-            var += diff * diff / (double)nrow;
+            var += arr[row][axis] * arr[row][axis];
         }
+        var /= (double)nrow;
+        var -= average * average;
         return var;
     }
 
