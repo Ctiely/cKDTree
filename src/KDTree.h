@@ -20,7 +20,7 @@ using namespace std;
 
 class KDTree {
 public:
-    explicit KDTree(int dim)
+    explicit KDTree(unsigned int dim)
             : dim(dim), num_samples(0), Datas(), root(nullptr) {}
     ~KDTree() = default;
 
@@ -31,7 +31,7 @@ public:
     unordered_map<unsigned int, double> query_distance(vector<double> & data, double dist);
     pair<unsigned int, double> query(vector<double> & data);
 
-    int dim; // number of features
+    unsigned int dim; // number of features
     unsigned int num_samples; // number of samples
     vector<vector<double> > Datas;
 
